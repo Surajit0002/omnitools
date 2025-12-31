@@ -3,7 +3,7 @@ import { tools } from "../data/tools";
 import { categories } from "../data/categories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://omnitools.example.com";
+  const baseUrl = "https://omnitools-tau.vercel.app/";
 
   const toolUrls = tools.map((tool) => ({
     url: `${baseUrl}/tool/${tool.slug}`,

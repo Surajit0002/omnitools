@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Search, Menu, User, X, ChevronDown, Zap, Star, History, Settings, LogOut, ArrowRight, ChevronRight, Layers, FileText, HelpCircle, Info, Mail } from "lucide-react";
+import { Search, Menu, User, X, ChevronDown, Zap, Star, Settings, LogOut, ArrowRight, ChevronRight, Layers, FileText, Info } from "lucide-react";
 import * as Icons from "lucide-react";
 import React, { useState, useEffect } from "react";
 import GlobalSearch from "./GlobalSearch";
@@ -114,6 +114,7 @@ export default function Header() {
                 className={`h-10 w-10 rounded-xl flex items-center justify-center transition-all duration-300 border ${
                   isScrolled ? "bg-slate-900 text-white border-slate-800" : "bg-white text-slate-900 border-white/20 shadow-lg"
                 }`}
+                aria-label="User profile menu"
               >
                 <User className="h-5 w-5" />
               </button>
@@ -144,6 +145,7 @@ export default function Header() {
             <button 
               className="lg:hidden h-10 w-10 flex items-center justify-center bg-white rounded-xl border border-slate-200 shadow-sm"
               onClick={() => setIsMenuOpen(true)}
+              aria-label="Open mobile menu"
             >
               <Menu className="h-5 w-5 text-slate-900" />
             </button>
@@ -159,7 +161,7 @@ export default function Header() {
               <div className="bg-slate-900 text-white w-10 h-10 flex items-center justify-center rounded-xl font-black text-lg">OT</div>
               <span className="text-xl font-black tracking-tighter italic">OMNITOOLS</span>
             </Link>
-            <button onClick={() => setIsMenuOpen(false)} className="h-10 w-10 flex items-center justify-center bg-slate-100 rounded-xl">
+            <button onClick={() => setIsMenuOpen(false)} className="h-10 w-10 flex items-center justify-center bg-slate-100 rounded-xl" aria-label="Close menu">
               <X className="h-6 w-6" />
             </button>
           </div>

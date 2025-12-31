@@ -65,6 +65,7 @@ export default function ToolActions({ tool }: ToolActionsProps) {
             ? "bg-emerald-500 border-emerald-500 text-white" 
             : "bg-white border-slate-200 text-slate-600 hover:border-blue-400 hover:text-blue-600"
         }`}
+        aria-label={copied ? "Link copied" : "Share tool"}
       >
         {copied ? <Check className="h-4 w-4" /> : <Share2 className="h-4 w-4" />}
       </button>
@@ -75,6 +76,7 @@ export default function ToolActions({ tool }: ToolActionsProps) {
             ? "bg-slate-900 border-slate-900 text-white" 
             : "bg-white border-slate-200 text-slate-600 hover:border-yellow-400 hover:text-yellow-500"
         }`}
+        aria-label={isFavorited ? "Remove from favorites" : "Add to favorites"}
       >
         <Star className={`h-4 w-4 ${isFavorited ? "fill-yellow-400 text-yellow-400" : ""}`} /> 
       </button>

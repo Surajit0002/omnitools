@@ -49,7 +49,7 @@ export default function SignupPage() {
           <div className="rounded-md shadow-sm space-y-4">
             <div className="relative">
               <User className="absolute left-3 top-9 h-5 w-5 text-gray-400" />
-              <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 ml-1">Full Name</label>
+              <label className="block text-xs font-bold text-gray-600 uppercase tracking-widest mb-1 ml-1">Full Name</label>
               <input
                 type="text"
                 required
@@ -59,7 +59,7 @@ export default function SignupPage() {
             </div>
             <div className="relative">
               <Mail className="absolute left-3 top-9 h-5 w-5 text-gray-400" />
-              <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 ml-1">Email address</label>
+              <label className="block text-xs font-bold text-gray-600 uppercase tracking-widest mb-1 ml-1">Email address</label>
               <input
                 type="email"
                 required
@@ -69,7 +69,7 @@ export default function SignupPage() {
             </div>
             <div className="relative">
               <Lock className="absolute left-3 top-9 h-5 w-5 text-gray-400" />
-              <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 ml-1">Password</label>
+              <label className="block text-xs font-bold text-gray-600 uppercase tracking-widest mb-1 ml-1">Password</label>
               <input
                 type="password"
                 required

@@ -78,7 +78,7 @@ export default function LoginPage() {
           <div className="space-y-4">
             <div className="relative group">
               <Mail className="absolute left-4 top-[38px] h-5 w-5 text-gray-400 group-focus-within:text-blue-600 transition-colors" />
-              <label className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1.5 ml-1">Email Address</label>
+              <label className="block text-[10px] font-black text-gray-600 uppercase tracking-widest mb-1.5 ml-1">Email Address</label>
               <input
                 type="email"
                 required
@@ -88,7 +88,7 @@ export default function LoginPage() {
             </div>
             <div className="relative group">
               <Lock className="absolute left-4 top-[38px] h-5 w-5 text-gray-400 group-focus-within:text-blue-600 transition-colors" />
-              <label className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1.5 ml-1">Password</label>
+              <label className="block text-[10px] font-black text-gray-600 uppercase tracking-widest mb-1.5 ml-1">Password</label>
               <input
                 type="password"
                 required

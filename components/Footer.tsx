@@ -16,7 +16,7 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Categories</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-gray-700">
               <li><Link href="/category/calculators" className="hover:text-blue-600">Calculators</Link></li>
               <li><Link href="/category/converters" className="hover:text-blue-600">Converters</Link></li>
               <li><Link href="/category/text-tools" className="hover:text-blue-600">Text Tools</Link></li>
@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Company</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-gray-700">
               <li><Link href="/about" className="hover:text-blue-600">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-blue-600">Contact</Link></li>
               <li><Link href="/blog" className="hover:text-blue-600">Blog</Link></li>
@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Legal</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-gray-700">
               <li><Link href="/privacy-policy" className="hover:text-blue-600">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-blue-600">Terms of Service</Link></li>
               <li><Link href="/cookie-policy" className="hover:text-blue-600">Cookie Policy</Link></li>

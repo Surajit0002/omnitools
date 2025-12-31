@@ -1,8 +1,13 @@
 import Link from "next/link";
 import { ArrowRight, Star, Zap, Shield, Search, TrendingUp, Sparkles } from "lucide-react";
-import ToolCard from "@/components/ToolCard";
 import { getPopularTools, getAllCategories } from "@/lib/utils";
+import dynamic from "next/dynamic";
 import * as Icons from "lucide-react";
+
+// Dynamic import for heavy components
+const ToolCard = dynamic(() => import("@/components/ToolCard"), {
+  loading: () => <div className="h-48 bg-slate-100 rounded-2xl animate-pulse"></div>
+});
 
 export default function Home() {
   const popularTools = getPopularTools();
@@ -14,14 +19,14 @@ export default function Home() {
       <section className="relative pt-16 pb-12 overflow-hidden">
         {/* Abstract Background Shapes */}
         <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px]"></div>
           <div className="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px]"></div>
           <div className="absolute top-[20%] right-[10%] w-64 h-64 bg-emerald-500/5 rounded-full blur-[80px]"></div>
         </div>
         
         <div className="container px-4 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 glass-card mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <div className="h-1.5 w-1.5 rounded-full bg-blue-600 animate-ping"></div>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 glass-card mb-8">
+            <div className="h-1.5 w-1.5 rounded-full bg-blue-600"></div>
             <span className="text-[8px] font-black uppercase tracking-[0.4em] text-slate-800">Omnitools V2.0 is Live</span>
           </div>
           
@@ -36,12 +41,17 @@ export default function Home() {
           </p>
           
           <div className="relative max-w-2xl mx-auto mb-10 group">
+            <label htmlFor="search-input" className="sr-only">
+              Search tools
+            </label>
             <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur opacity-10 group-focus-within:opacity-25 transition-opacity duration-500"></div>
             <div className="relative flex items-center">
-              <Search className="absolute left-6 h-5 w-5 text-slate-400 group-focus-within:text-blue-600 transition-colors" />
+              <Search className="absolute left-6 h-5 w-5 text-slate-400 group-focus-within:text-blue-600 transition-colors" aria-hidden="true" />
               <input
+                id="search-input"
                 type="text"
                 placeholder="Search 100+ utilities..."
+                aria-label="Search tools"
                 className="w-full h-16 pl-14 pr-8 rounded-2xl bg-white border border-slate-100 shadow-2xl focus:outline-none text-base font-black transition-all placeholder:text-slate-300 placeholder:italic focus:border-blue-100"
               />
               <div className="absolute right-6 px-3 py-1 bg-slate-50 rounded-lg text-[8px] font-black text-slate-400 uppercase tracking-widest hidden md:block border border-slate-100">
@@ -52,9 +62,14 @@ export default function Home() {
 
           <div className="flex flex-wrap justify-center gap-3 text-[8px] font-black uppercase tracking-[0.2em] text-slate-400">
             <span className="text-slate-900">Trending:</span>
-            {['Word Counter', 'JSON Formatter', 'AI Resume', 'IP Lookup'].map((tool, i) => (
-              <Link key={i} href="#" className="px-3 py-1 glass-card hover:bg-slate-900 hover:text-white transition-all">
-                {tool}
+            {[
+              { name: 'Word Counter', slug: 'word-counter' },
+              { name: 'JSON Formatter', slug: 'json-formatter' },
+              { name: 'AI Resume', slug: 'ai-resume-builder' },
+              { name: 'IP Lookup', slug: 'ip-lookup' }
+            ].map((tool, i) => (
+              <Link key={i} href={`/tool/${tool.slug}`} className="px-3 py-1 glass-card hover:bg-slate-900 hover:text-white transition-all">
+                {tool.name}
               </Link>
             ))}
           </div>

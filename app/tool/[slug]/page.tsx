@@ -17,10 +17,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const tool = getToolBySlug(slug);
   if (!tool) return { title: "Tool Not Found" };
+
+  const faqSchema = tool.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": tool.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
   return {
     title: tool.seo.title,
     description: tool.seo.description,
     keywords: tool.seo.keywords,
+    other: faqSchema ? {
+      "application/ld+json": JSON.stringify(faqSchema)
+    } : {}
   };
 }
 

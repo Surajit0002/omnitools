@@ -43,19 +43,21 @@ export default function GlobalSearch() {
       <div className="relative group">
         <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-[18px] blur-md opacity-0 group-focus-within:opacity-20 transition-all duration-700"></div>
         <div className="absolute inset-0 bg-white/5 backdrop-blur-md rounded-[16px] pointer-events-none border border-white/10"></div>
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 group-focus-within:text-blue-500 transition-all z-10 group-focus-within:scale-110" />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 group-focus-within:text-blue-500 transition-all z-10 group-focus-within:scale-110" aria-hidden="true" />
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => query.length > 1 && setIsOpen(true)}
           placeholder="Explore Next-Gen Tools..."
+          aria-label="Search for tools"
           className="relative w-full h-10 pl-11 pr-11 rounded-[16px] border border-slate-200/50 bg-slate-50/50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-600/5 shadow-inner text-[10px] transition-all font-black uppercase tracking-widest placeholder:text-slate-400 placeholder:normal-case placeholder:font-bold"
         />
         {query && (
           <button 
             onClick={() => setQuery("")}
             className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-red-500 transition-all z-10 hover:rotate-90"
+            aria-label="Clear search"
           >
             <X className="h-4 w-4" />
           </button>
