@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "OMNITOOLS - Fast, Free, Secure Online Tools",
   description: "Explore hundreds of free online tools for developers, designers, students and professionals. Calculators, converters, text tools and more.",
+  verification: {
+    google: "google7a97fa2d2c9105b9.html"
+  },
 };
 
 export default function RootLayout({
